@@ -1,0 +1,12 @@
+SELECT company_name, maternity_leave_weeks
+FROM fortune_companies
+ORDER BY maternity_leave_weeks asc;
+
+SELECT company_name, maternity_leave_weeks,
+CASE WHEN maternity_leave_weeks >=16  THEN '5 star company'
+WHEN maternity_leave_weeks >=12 THEN '4 star company'
+WHEN maternity_leave_weeks >=8 THEN '3 star comapny'
+ELSE '2 star comapny'
+END AS comnpany_rating
+FROM fortune_companies
+ORDER BY maternity_leave_weeks asc;
